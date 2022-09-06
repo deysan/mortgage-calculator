@@ -1,4 +1,4 @@
-import { Data, Detail } from './types';
+import { Data, Detail, Results } from './types';
 
 let data: Data = {
   selectedProgram: 0.1,
@@ -10,8 +10,16 @@ let data: Data = {
   },
 };
 
+let results: Results = {
+  rate: data.selectedProgram,
+};
+
 function getData() {
   return { ...data };
+}
+
+function getResults() {
+  return { ...results };
 }
 
 function setData(newData: Detail) {
@@ -22,7 +30,12 @@ function setData(newData: Detail) {
     ...newData,
   };
 
+  results = {
+    rate: data.selectedProgram,
+  };
+
   console.log('Updated data', data);
+  console.log('New results', results);
 }
 
-export { getData, setData };
+export { getData, setData, getResults };

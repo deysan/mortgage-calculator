@@ -15,3 +15,7 @@ export type Detail = {
   onUpdate: string;
   id: string;
 };
+
+export type Results = {
+  rate: number;
+};
