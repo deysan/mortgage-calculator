@@ -2,6 +2,9 @@ import { Data, Detail, Results } from './types';
 
 let data: Data = {
   selectedProgram: 0.1,
+  cost: 12000000,
+  minPrice: 375000,
+  maxPrice: 100000000,
   programs: {
     base: 0.1,
     it: 0.047,

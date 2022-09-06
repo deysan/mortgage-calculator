@@ -7,6 +7,9 @@ export type Programs = {
 
 export type Data = {
   selectedProgram: number;
+  cost: number;
+  minPrice: number;
+  maxPrice: number;
   programs: Programs;
 };
 
