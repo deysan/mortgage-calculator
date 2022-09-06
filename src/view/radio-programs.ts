@@ -1,7 +1,7 @@
 import { Data } from '../types';
 import updateModel from '../utils/update-model';
 
-function init(getData: () => Data) {
+function radioPrograms(getData: () => Data) {
   const radioButtons: NodeListOf<HTMLInputElement> =
     document.querySelectorAll('input[name="program"]');
   const { base, it, gov, zero } = getData().programs;
@@ -29,4 +29,4 @@ function init(getData: () => Data) {
   });
 }
 
-export default init;
+export default radioPrograms;
