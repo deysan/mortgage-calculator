@@ -1,4 +1,5 @@
 import { Data } from '../types';
+import updateModel from '../utils/update-model';
 
 function init(getData: () => Data) {
   const radioButtons: NodeListOf<HTMLInputElement> =
@@ -19,20 +20,11 @@ function init(getData: () => Data) {
 
   radioButtons.forEach(function (radioBtn) {
     radioBtn.addEventListener('change', function () {
-      console.log(this);
-      console.log(parseFloat(this.value));
-      console.log(this.id);
-
-      this.dispatchEvent(
-        new CustomEvent('updateForm', {
-          bubbles: true,
-          detail: {
-            selectedProgram: parseFloat(this.value),
-            onUpdate: 'radioProgram',
-            id: this.id,
-          },
-        }),
-      );
+      updateModel(this, {
+        onUpdate: 'radioProgram',
+        selectedProgram: parseFloat(this.value),
+        id: this.id,
+      });
     });
   });
 }
