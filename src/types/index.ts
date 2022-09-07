@@ -14,9 +14,10 @@ export type Data = {
 };
 
 export type Detail = {
-  selectedProgram: number;
+  selectedProgram?: number;
   onUpdate: string;
-  id: string;
+  id?: string;
+  cost?: number;
 };
 
 export type Results = {

@@ -1,6 +1,7 @@
 import Cleave from 'cleave.js';
 import { CleaveOptions } from 'cleave.js/options';
 import { Data } from '../types';
+import updateModel from '../utils/update-model';
 
 function constInput(getData: () => Data) {
   const data = getData();
@@ -26,6 +27,9 @@ function constInput(getData: () => Data) {
     if (value >= data.minPrice && value <= data.maxPrice) {
       input.closest('.param__details')?.classList.remove('param__details--error');
     }
+
+    // Update model
+    updateModel(input, { cost: value, onUpdate: 'inputCost' });
   });
 
   input.addEventListener('change', function () {
@@ -40,6 +44,12 @@ function constInput(getData: () => Data) {
       input.closest('.param__details')?.classList.remove('param__details--error');
       cleaveInput.setRawValue(data.minPrice.toString());
     }
+
+    // Update model
+    updateModel(input, {
+      cost: +cleaveInput.getRawValue(),
+      onUpdate: 'inputCost',
+    });
   });
 }
 
