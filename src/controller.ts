@@ -1,7 +1,8 @@
 import * as Model from './model';
 
 import { Detail } from './types';
-import constInput from './view/cost-input';
+import costInput from './view/cost-input';
+import costRange from './view/cost-range';
 import programs from './view/radio-programs';
 import updateResultsView from './view/update-results-view';
 
@@ -12,7 +13,8 @@ window.onload = function () {
   programs(getData);
 
   // Init Cost input
-  constInput(getData);
+  costInput(getData);
+  costRange(getData);
 
   document.addEventListener('updateForm', (e: CustomEvent<Detail>) => {
     Model.setData(e.detail);

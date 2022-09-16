@@ -3,15 +3,15 @@ import { CleaveOptions } from 'cleave.js/options';
 import { Data } from '../types';
 import updateModel from '../utils/update-model';
 
-function constInput(getData: () => Data) {
+function costInput(getData: () => Data) {
   const data = getData();
   const input = document.querySelector('#input-cost') as HTMLInputElement;
 
-  const settings = {
+  const settings: CleaveOptions = {
     numeral: true,
     numeralThousandsGroupStyle: 'thousand',
     delimiter: ' ',
-  } as CleaveOptions;
+  };
 
   const cleaveInput = new Cleave(input, settings);
   cleaveInput.setRawValue(data.cost.toString());
@@ -53,4 +53,4 @@ function constInput(getData: () => Data) {
   });
 }
 
-export default constInput;
+export default costInput;
