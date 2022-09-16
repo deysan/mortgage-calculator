@@ -1,5 +1,6 @@
 import { Data } from '../types';
 import noUiSlider from 'nouislider';
+import wNumb from 'wnumb';
 
 function costRange(getData: () => Data) {
   const data = getData();
@@ -11,11 +12,16 @@ function costRange(getData: () => Data) {
     tooltips: true,
     step: 100000,
     range: {
-      max: data.maxPrice,
+      min: data.minPrice,
       '1%': [400000, 100000],
       '50%': [10000000, 500000],
-      min: data.minPrice,
+      max: data.maxPrice,
     },
+    format: wNumb({
+      decimals: 0,
+      thousand: ' ',
+      suffix: '',
+    }),
   });
 }
 
