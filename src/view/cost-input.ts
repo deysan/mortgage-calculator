@@ -51,6 +51,8 @@ function costInput(getData: () => Data) {
       onUpdate: 'inputCost',
     });
   });
+
+  return cleaveInput;
 }
 
 export default costInput;

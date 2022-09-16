@@ -33,6 +33,8 @@ function costRange(getData: () => Data) {
 
     updateModel(slider, { cost: sliderValue, onUpdate: 'costSlider' });
   });
+
+  return slider;
 }
 
 export default costRange;

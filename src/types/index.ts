@@ -11,14 +11,14 @@ export type Data = {
   minPrice: number;
   maxPrice: number;
   programs: Programs;
+  onUpdate?: string;
+  id?: string;
 };
 
-export type Detail = {
-  selectedProgram?: number;
-  onUpdate: string;
-  id?: string;
-  cost?: number;
-};
+// export type Detail = {
+//   selectedProgram?: number;
+//   cost?: number;
+// };
 
 export type Results = {
   rate: number;

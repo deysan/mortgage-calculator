@@ -1,4 +1,4 @@
-import { Data, Detail, Results } from './types';
+import { Data, Results } from './types';
 
 let data: Data = {
   selectedProgram: 0.1,
@@ -25,7 +25,7 @@ function getResults() {
   return { ...results };
 }
 
-function setData(newData: Detail) {
+function setData(newData: Data) {
   console.log('New data', newData);
 
   if (newData.onUpdate === 'inputCost' && newData.cost) {
